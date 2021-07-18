@@ -19,10 +19,12 @@ class CheckPassword:
     @staticmethod
     def not_in_pass_list(value):
         with open(CheckPassword.path_to_txt, 'r') as file:
-            passlist = map(str.strip, file.readlines())
+            passlist = set(map(str.strip, file.readlines()))
         if value in passlist:
             return False
         else:
             return True
 
-s = CheckPassword("1wrghh4th")
+
+# s = CheckPassword("1wrghh4th")
+f = CheckPassword("12345")
