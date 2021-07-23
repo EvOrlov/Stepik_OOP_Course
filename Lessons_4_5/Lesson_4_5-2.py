@@ -9,10 +9,11 @@ class Transport:
 
 
 class Car(Transport):
-    def __init__(self, brand, max_speed, mileage, gasoline_residue):
-        super().__init__(brand, max_speed, kind="Car")
+    def __init__(self, brand, max_speed, mileage, gasoline_residue, kind="Car"):
+        super().__init__(brand, max_speed, kind)
         self.mileage = mileage
         self.__gasoline_residue = gasoline_residue
+        self.kind = kind
 
     @property
     def gasoline(self):
@@ -28,18 +29,20 @@ class Car(Transport):
 
 
 class Boat(Transport):
-    def __init__(self, brand, max_speed, owners_name):
-        super().__init__(brand, max_speed, kind="Boat")
+    def __init__(self, brand, max_speed, owners_name, kind="Boat"):
+        super().__init__(brand, max_speed, kind)
         self.owners_name = owners_name
+        self.kind = kind
 
     def __str__(self):
         return f"Этой лодкой марки {self.brand} владеет {self.owners_name}"
 
 
 class Plane(Transport):
-    def __init__(self, brand, max_speed, capacity):
-        super().__init__(brand, max_speed, kind="Plane")
+    def __init__(self, brand, max_speed, capacity, kind="Plane"):
+        super().__init__(brand, max_speed, kind)
         self.capacity = capacity
+        self.kind = kind
 
     def __str__(self):
         return f"Самолет марки {self.brand} вмещает в себя {self.capacity} людей"
